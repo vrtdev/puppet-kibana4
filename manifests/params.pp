@@ -8,6 +8,7 @@ class kibana4::params {
   $manage_repo                   = true
   $package_repo_version          = '4.5'
   $package_install_dir           = '/opt/kibana'
+  $package_name                  = 'kibana'
   $service_ensure                = true
   $service_enable                = true
   $service_name                  = 'kibana'
@@ -22,4 +23,7 @@ class kibana4::params {
     default: { $service_provider = init   }
   }
   $config                        = undef
+  $config_file                   = '/opt/kibana/config/kibana.yml'
+  $config_file_owner             = 'kibana'
+  $config_file_group             = 'kibana'
 }
